@@ -1,0 +1,10 @@
+.reddizz {
+    background-color:yellow;
+    
+}
+
+[data-tooltip] {
+    background-color:aquamarine;
+    color:blueviolet;
+    /* Attribute has this exact value */
+  }

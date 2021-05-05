@@ -1,9 +1,24 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark justify-content-between">
+ 
+  <a class="navbar-brand text-light">Evaluation</a>
+    <div>
+      <ul class="navbar-nav mr-sm-2">
+        <li class="nav-item" [routerLinkActive]='["active"]' [routerLinkActiveOptions]='{ exact: true }'>
+            <a class="nav-link" [routerLink]='["/"]'>Main</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]='["active"]'>
+            <a class="nav-link" [routerLink]='["/schedule"]'>Schedule</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]='["active"]'>
+            <a class="nav-link" [routerLink]='["/addevent"]'>Add event</a>
+        </li>
+      </ul>
 
-<nav class="nav">
-    <li class="nav-item" [routerLinkActive]='["active"]' [routerLinkActiveOptions]='{ exact: true }'>
-        <a class="nav-link" [routerLink]='["/"]'>Main</a>
-    </li>
-    <li class="nav-item" [routerLinkActive]='["active"]'>
-        <a class="nav-link" [routerLink]='["/schedule"]'>Schedule</a>
-    </li>
-</nav>
+    </div>
+  </nav>
+
+
+
+
+
+

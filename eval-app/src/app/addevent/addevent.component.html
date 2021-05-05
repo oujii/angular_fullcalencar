@@ -1,0 +1,49 @@
+<div><h3>Add a new event</h3>
+
+    <div class="form-group w-50">
+    <input type="text" class="form-control input-lg" [(ngModel)]="title" placeholder="Title">
+  </div>
+
+  <div class="input-group w-25">
+    <input class="form-control" placeholder="yyyy-mm-dd"
+           name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+    </div>
+  </div>
+<br>
+              <div class="row form-group">
+                <div class="col">
+                  <div ngbDropdown class="d-inline-block">
+                    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>User</button>
+                    <div ngbDropdownMenu  aria-labelledby="dropdownBasic1">
+                       <button *ngFor='let user of users' ngbDropdownItem> <span [style.color]="user.color">&#9632;</span> {{user.name}}</button>
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+               
+          
+     
+
+Start time
+<div class="form-group">
+  <ngb-timepicker [(ngModel)]="time"></ngb-timepicker>
+  </div><div class="form-group">
+    End Time
+    <ngb-timepicker [(ngModel)]="timeEnd"></ngb-timepicker>
+    </div>
+
+
+   
+    <div style="background-color: lightgrey; border-radius: 5px;padding:5px" class="w-25">
+     
+      <b>{{ time.hour}}:{{ time.minute }} </b>
+       {{title}}
+    </div>
+
+    <button style="margin-top:20px" type="button" class="btn btn-outline-secondary mr-2" placement="top">
+      Add event
+    </button>
+  

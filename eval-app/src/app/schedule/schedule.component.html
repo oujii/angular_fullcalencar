@@ -1,1 +1,34 @@
-<full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins" [events]="events" (eventRender)="eventRendered($event)"></full-calendar>
+
+
+
+  <div class="col">
+    
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Users</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button *ngFor='let user of users' (click)='listFilter = user.id.toString()' ngbDropdownItem> <span [style.color]="user.color">&#9632;</span> {{user.name}}</button>
+      </div>
+      
+      
+    </div>
+  
+
+
+<full-calendar 
+#calendar 
+defaultView="dayGridMonth" 
+[plugins]="calendarPlugins" 
+[events] = "listFilter ? eventsFiltered : eventsDefault"
+locale="sv"
+eventBorderColor="orange"
+(eventMouseEnter)="eventMouseEnter($event)"
+(eventMouseLeave)="eventMouseLeave($event)"
+[eventTimeFormat]="{
+    hour: 'numeric',
+    minute: '2-digit'
+  }"
+
+(eventRender)="eventRendered($event)"
+>
+</full-calendar>
+
