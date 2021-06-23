@@ -1,2 +1,1 @@
-# Tieto Evaluation Carl Waerner
 
